@@ -14,16 +14,7 @@ DIR=${FILE%.tar.bz2}
 
 PROFILE=WNDR4300
 
-PACKAGES="bash bind-host iftop less libiwinfo-lua liblua libubus-lua
-          libuci-lua lua luci luci-app-cshark luci-app-ddns
-          luci-app-diag-core luci-app-diag-devinfo luci-app-firewall
-          luci-app-ntpc luci-app-openvpn luci-app-sqm
-          luci-app-statistics luci-app-upnp luci-app-vnstat
-          luci-app-watchcat luci-app-wol luci-base luci-lib-ip
-          luci-lib-nixio luci-mod-admin-full luci-proto-ipv6
-          luci-proto-ppp luci-ssl luci-theme-bootstrap
-          openvpn-polarssl rpcd nmap-ssl rsync uhttpd uhttpd-mod-ubus
-          wget zile"
+PACKAGES="wget luci luci-theme-bootstrap iptables-mod-nat-extra ipset libopenssl shadowsocks-libev -dnsmasq dnsmasq-full pdnsd luci-app-upnp"
 
 if [ ! -e $FILE ]; then
     wget $URL
@@ -45,4 +36,4 @@ make image PROFILE="$PROFILE" PACKAGES="$(echo $PACKAGES)"
 cp $BINDIR/*.{tar,img} $TOPDIR
 
 cd $TOPDIR
-rm -r build
+#rm -r build
