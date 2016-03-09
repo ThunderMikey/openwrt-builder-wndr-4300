@@ -14,7 +14,7 @@ DIR=${FILE%.tar.bz2}
 
 PROFILE=WNDR4300
 
-PACKAGES="wget luci luci-theme-bootstrap iptables-mod-nat-extra ipset libopenssl shadowsocks-libev -dnsmasq dnsmasq-full pdnsd luci-app-upnp"
+PACKAGES="wget luci luci-theme-bootstrap iptables-mod-nat-extra ipset libopenssl shadowsocks-libev -dnsmasq dnsmasq-full pdnsd luci-app-upnp bind-dig"
 
 if [ ! -e $FILE ]; then
     wget $URL
